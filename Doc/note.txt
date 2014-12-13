@@ -1,0 +1,8 @@
+Spring
+一.配置环境
+1.安装eclipse工具,在spring.io网站找到对应的Eclipse版本的spring tool suits更新网址,在线更新带有IDE相关的插件即可.
+2.http://repo.spring.io/simple/libs-release-local/org/springframework/下载找到必须的4个jar,加上commons-logging.jar
+3.
+
+二.配置bean
+1. 
