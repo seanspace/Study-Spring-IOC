@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="address" class="com.bin.spring.beans.autowire.Address"
+		p:city="BeiJing" p:street="HuiLongGuan"></bean>
+		
+	<bean id="address1" class="com.bin.spring.beans.autowire.Address"
+		p:city="BeiJing" p:street="HuiLongGuan"></bean>
+		
+	<bean id="car" class="com.bin.spring.beans.autowire.Car" 
+		p:brand="Audi" p:price="300000"></bean>
+	<!-- 	传统手工装配
+	<bean id="" class="com.bin.spring.beans.autowire.Person"
+		p:name="Tom" p:addrees-ref="address" p:car-ref="car"></bean>
+	-->
+	
+	<!-- 可以使用autowire属性指定自动装配的方式,
+		byName根据bean的名字和当前bean风格的setter属性自动装配,若有匹配的自动装配,若没有匹配的,不装配.
+		byType 根据bean的类型和当前bean的属性的类型自动装配.但属性是有多个实例时会抛出异常.
+		
+		自动装配的缺点:
+		1.一旦使用了自动装配,就必须为当前bean的所有属性自动装配.
+		2.byName和byType不能同时使用.
+		所以自动装配很少使用.(整合框架的时候,可以能会用到).
+	 -->
+	<bean id="" class="com.bin.spring.beans.autowire.Person"
+		p:name="Tom" autowire="byName"></bean>
+		
+		
+</beans>
